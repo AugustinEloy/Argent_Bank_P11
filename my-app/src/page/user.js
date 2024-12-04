@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserProfile, updateUserProfile } from '../store/features/userthunk';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight }  from '@fortawesome/free-solid-svg-icons';
+import Account from '../component/account';
 
 
 const User = () => {
@@ -78,44 +77,26 @@ const User = () => {
           </div>
         </div>
         <h2 className="sr-only">Accounts</h2>
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Checking (x8349)</h3>
-            <p className="account-amount">$2,082.79</p>
-            <p className="account-amount-description">Available Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">
-              <FontAwesomeIcon icon={faAngleRight} />
-            </button>
-          </div>
-        </section>
+          <Account
+            title="Argent Bank Checking"
+            amount="$2,082.79"
+            description="Available Balance"
+            accountNumber="x8349"
+          />
 
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Savings (x6712)</h3>
-            <p className="account-amount">$10,928.42</p>
-            <p className="account-amount-description">Available Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">
-            <FontAwesomeIcon icon={faAngleRight} />
-            </button>
-          </div>
-        </section>
+          <Account
+            title="Argent Bank Savings"
+            amount="$10,928.42"
+            description="Available Balance"
+            accountNumber="x6712"
+          />
 
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Credit Card (x8349)</h3>
-            <p className="account-amount">$184.30</p>
-            <p className="account-amount-description">Current Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">
-              <FontAwesomeIcon icon={faAngleRight} />
-            </button>
-          </div>
-        </section>
+          <Account
+            title="Argent Bank Credit Card"
+            amount="$184.30"
+            description="Current Balance"
+            accountNumber="x8349"
+          />  
       </div>
     </div>
   );

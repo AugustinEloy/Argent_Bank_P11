@@ -101,9 +101,11 @@ body {
   width: 17%;
   border-radius: 5px;
 }
+
 .main-nav-item {
   text-decoration: none;
   margin-right: 0.5rem;
+  color: #00bc77;
 }
 
 .main-nav-item:hover {

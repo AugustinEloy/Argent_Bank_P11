@@ -13,46 +13,8 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser(email, password, navigate)); // Call the thunk
+    dispatch(loginUser(email, password, navigate)); 
   };
-  /*const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    try {
-      
-      const response = await fetch('http://localhost:3001/api/v1/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json', 
-        },
-        body: JSON.stringify({
-          email, 
-          password, 
-        }),
-      });
-
-      
-      const data = await response.json();
-      console.log("Réponse de l'API:", data); 
-  
-      if (response.ok) {
-        if (data.body && data.body.token) {
-         
-          dispatch(login({
-            token: data.body.token, 
-          }));
-          navigate('/user'); 
-        } else {
-          alert('Réponse invalide de l\'API : pas de token');
-        }
-      } else {
-        alert('Erreur de connexion');
-      }
-    } catch (error) {
-      console.error('Erreur de connexion:', error);
-      alert('Erreur de connexion. Veuillez réessayer.');
-    }
-  };*/
 
   return (
     <main >

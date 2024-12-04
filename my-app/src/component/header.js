@@ -5,7 +5,7 @@ import { logout } from '../store/features/userSlices';
 import logo from "../assets/argentBankLogo.png";
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPowerOff, faImagePortrait } from '@fortawesome/free-solid-svg-icons';
+import { faPowerOff, faCircleUser, faGear } from '@fortawesome/free-solid-svg-icons';
 
 
 const Header = () => {
@@ -29,31 +29,39 @@ const Header = () => {
         />
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
-      <div>
-        {isAuthenticated ? (
-          <>
-            <span className="main-nav-item">
+        <div>
+          {isAuthenticated ? (
+            <>
+              <span className="main-nav-item">
+                {userName}
+                <FontAwesomeIcon 
+                icon={faCircleUser}
+                style={{ color: '#00bc77',  fontSize: '2rem', marginLeft: '1rem' , }}
+                />
+              </span>
+                <button
+                  className="main-nav-item"
+                  style={{ cursor: "pointer", border: "none", background: "none", color: "#00bc77", marginLeft: '3rem', fontSize: '2rem'  }}
+                >
+                  <FontAwesomeIcon icon={faGear} />
+                </button>
+
+                  <button
+                    className="main-nav-item"
+                    onClick={handleLogout}
+                    style={{ cursor: "pointer", border: "none", background: "none", color: "#00bc77", marginLeft: '3rem', fontSize: '2rem'  }}
+                  >
+                    <FontAwesomeIcon icon={faPowerOff} />
+                  </button>
+            </>
+          ) : (
+            <Link className="main-nav-item" to="/signin">
               <i className="fa fa-user-circle"></i>
-              <FontAwesomeIcon icon={faImagePortrait} />
-              {userName}
-            </span>
-            <button
-              className="main-nav-item"
-              onClick={handleLogout}
-              style={{ cursor: "pointer", border: "none", background: "none", color: "#2c3e50" }}
-            >
-              <i className="fa fa-sign-out"></i>
-              <FontAwesomeIcon icon={faPowerOff} />
-            </button>
-          </>
-        ) : (
-          <Link className="main-nav-item" to="/signin">
-            <i className="fa fa-user-circle"></i>
-            Sign In
-          </Link>
-        )}
-      </div>
-    </nav>
+              Sign In
+            </Link>
+          )}
+        </div>
+      </nav>
   );
 };
 
