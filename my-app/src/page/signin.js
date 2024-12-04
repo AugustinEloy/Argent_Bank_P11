@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '../store/features/userSlices';
+import { loginUser } from '../store/features/userthunk';
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
@@ -9,7 +9,13 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(email, password, navigate)); // Call the thunk
+  };
+  /*const handleSubmit = async (e) => {
     e.preventDefault();
   
     try {
@@ -46,10 +52,11 @@ const SignIn = () => {
       console.error('Erreur de connexion:', error);
       alert('Erreur de connexion. Veuillez réessayer.');
     }
-  };
+  };*/
 
   return (
-    <main className="main bg-dark">
+    <main >
+      <div className="main bg-dark">
       <section className="sign-in-content">
         <i className="fa fa-user-circle sign-in-icon"></i>
           <h1>Sign In</h1>
@@ -79,6 +86,7 @@ const SignIn = () => {
           </button>
         </form>
       </section>
+      </div>
     </main>
   );
 };

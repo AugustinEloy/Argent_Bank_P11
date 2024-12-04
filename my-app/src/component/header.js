@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../store/features/userSlices'; 
 import logo from "../assets/argentBankLogo.png";
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPowerOff, faImagePortrait } from '@fortawesome/free-solid-svg-icons';
+
 
 const Header = () => {
   const navigate = useNavigate()
@@ -31,6 +34,7 @@ const Header = () => {
           <>
             <span className="main-nav-item">
               <i className="fa fa-user-circle"></i>
+              <FontAwesomeIcon icon={faImagePortrait} />
               {userName}
             </span>
             <button
@@ -39,7 +43,7 @@ const Header = () => {
               style={{ cursor: "pointer", border: "none", background: "none", color: "#2c3e50" }}
             >
               <i className="fa fa-sign-out"></i>
-              Logout
+              <FontAwesomeIcon icon={faPowerOff} />
             </button>
           </>
         ) : (

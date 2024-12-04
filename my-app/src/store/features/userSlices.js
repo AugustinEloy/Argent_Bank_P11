@@ -7,6 +7,9 @@ const userSlice = createSlice({
     email: '',
     token: null,
     userName: '', 
+    firstName: '',
+    lastName: '',  
+    
   },
   reducers: {
     login: (state, action) => {
@@ -20,11 +23,15 @@ const userSlice = createSlice({
       state.email = '';
       state.token = null;
       state.userName = '';
+      state.firstName = ''; 
+      state.lastName = '';  
     },
     updateUserName: (state, action) => {
       state.userName = action.payload.userName; 
     },
     setUserProfile: (state, action) => {
+      state.firstName = action.payload.firstName; 
+      state.lastName = action.payload.lastName;
       state.email = action.payload.email;
       state.userName = action.payload.userName;
       
