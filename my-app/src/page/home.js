@@ -1,5 +1,6 @@
 import Iconemoney from '../assets/icon-money.avif'
 import IconeSec from '../assets/icon-security.avif'
+import IconeChat from '../assets/icon-chat.avif'
 import React from 'react';
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
       <section className="features">
         <h2 className="sr-only">Features</h2>
         <div className="feature-item">
-          <img src= {Iconemoney} alt="Chat Icon" className="feature-icon" />
+          <img src= {IconeChat} alt="Chat Icon" className="feature-icon" />
           <h3 className="feature-item-title">You are our #1 priority</h3>
           <p>
             Need to talk to a representative? You can get in touch through our
