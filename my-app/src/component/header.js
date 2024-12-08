@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../store/features/userSlices'; 
-import logo from "../assets/argentBankLogo.png";
+import logo from "../assets/argentBankLogo.avif";
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff, faCircleUser, faGear } from '@fortawesome/free-solid-svg-icons';

@@ -124,6 +124,35 @@ paths:
           description: Internal Server Error
 
   /transactions/{id}:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - Transaction Module
+      summary: Retrieve a single transaction
+      description: API to fetch the details of a single transaction by its ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: string
+          description: ID of the transaction to retrieve
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction retrieved successfully
+          schema:
+            $ref: '#/definitions/Transaction'
+        '400':
+          description: Invalid ID
+        '401':
+          description: Unauthorized - User is not authenticated
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
+
     put:
       security:
         - Bearer: []

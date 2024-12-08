@@ -1,5 +1,5 @@
-import Iconemoney from '../assets/icon-money.png'
-import IconeSec from '../assets/icon-security.png'
+import Iconemoney from '../assets/icon-money.avif'
+import IconeSec from '../assets/icon-security.avif'
 import React from 'react';
 
 const Home = () => {
